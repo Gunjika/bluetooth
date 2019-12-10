@@ -84,6 +84,106 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        s2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (btSocket!=null)
+                {
+                    if(isChecked){
+                        try
+                        {
+                            btSocket.getOutputStream().write("3".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        try
+                        {
+                            btSocket.getOutputStream().write("2".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+            }
+        });
+
+        s3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (btSocket!=null)
+                {
+                    if(isChecked){
+                        try
+                        {
+                            btSocket.getOutputStream().write("5".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        try
+                        {
+                            btSocket.getOutputStream().write("4".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+            }
+        });
+        s4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (btSocket!=null)
+                {
+                    if(isChecked){
+                        try
+                        {
+                            btSocket.getOutputStream().write("7".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        try
+                        {
+                            btSocket.getOutputStream().write("6".getBytes());
+                        }
+                        catch (IOException e)
+                        {
+                            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+            }
+        });
+
+        s5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                s1.setChecked(isChecked);
+                s2.setChecked(isChecked);
+                s3.setChecked(isChecked);
+                s4.setChecked(isChecked);
+            }
+        });
+
         connect=findViewById(R.id.connect);
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
